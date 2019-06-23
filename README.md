@@ -22,7 +22,9 @@ This library implements a context provider to manage the login state and other s
 
 When the context provider is mounted, checks if there is the callback url with the token from SteemConnect to log in the user.
 
+
 *Note: The context provider requires the Steem Connect configJSON of your project*
+
 
 ```javascript
 import React from 'react';
@@ -55,7 +57,7 @@ export default App;
 --- 
 **Using steem context consumer**
 
-Once we have the provider in a partent component we need to consume our Context Provider to  use instances and functions from SteemConnect.
+Once we have the provider in a parent component we need to consume our Context Provider to  use instances and functions from SteemConnect.
 
 ```javascript
 import React from 'react';
@@ -90,7 +92,7 @@ import {SteemContext} from 'react-steem-provider';
 
 ```
 
-What is in the instace steem?:
+What is in the steem instance?:
 
 ```javascript
     {
@@ -130,7 +132,11 @@ const Dashboard = (props)=>{
 ```
 ---
 **List of actions from SteemContext**
+
+
 *Note: You MUST be logged to use this actions*
+
+
 - Get logged user
 ```javascript
 await steem.actions.me()
@@ -218,7 +224,7 @@ await steem.actions.revokeToken()
 
 **Async Steem functions**
 
-A simplificated set of  async steem functions.
+A simplificated set of async steem functions.
 
 
 ```javascript
@@ -297,6 +303,8 @@ SteemHelpers.parseSteemMarkdown("<<post.body>>")
 **Dahsboard.js**
 
 *Note: Remeber to implement the context provider as parent component.*
+
+
 ```javascript
 import React, {userEffect, useContext} from "react"
 import {SteemAsync, SteemContext} from 'react-steem-provider';
