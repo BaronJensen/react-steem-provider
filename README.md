@@ -307,53 +307,55 @@ SteemHelpers.parseSteemMarkdown("<<post.body>>")
 
 
 ```javascript
-import React, {userEffect, useContext} from "react"
-import SteemAsync from 'react-steem-provider/SteemAsync';
-import {SteemContext} from 'react-steem-provider';
+import React, { useEffect, useContext } from "react";
+import SteemAsync from "react-steem-provider/SteemAsync";
+import { SteemContext } from "react-steem-provider";
 
-const PrintPost = (props)=>{
+const PrintPost = props => {
+  const { actions, auth } = useContext(SteemContext);
 
-  const {
-    actions,
-    auth
-    } = useContext(SteemContext);
-    useEffect(()=>{
-        let post = await SteemAsync.getDiscussionsByBlog({auth.name}, 10);
-        console.log(post)
-    });
-    
-    makeANewPost(){
-        steem.actions.post({
-                title:"_react-steem-provider"
-                body:"### npm install react-steem-provider",
-                category:"developer",
-        })
-        .then(()=>{alert("Post created")})
-        .catch((error)=>{
-            alert("UPS, there is an error")
-        })
-    }
-    if(!auth)
-        throw "User not logged" 
-  return(
-  <React.Fragment>
-      <h1>This button create a post in your blog, be wise when you click on it </h1>
-      <button onClick={makeANewPost}>Make a new post</button>
-   </React.Fragment>
-  )
+  useEffect(async () => {
+    let post = await SteemAsync.readPostGeneral("", "Trending", 10);
+    console.log(post);
+  });
 
-}
+  const makeANewPost = () => {
+    actions
+      .post({
+        title: "_react-steem-provider",
+        body: "### npm install react-steem-provider",
+        category: "developer"
+      })
+      .then(() => {
+        alert("Post created");
+      })
+      .catch(error => {
+        alert("UPS, there is an error");
+      });
+  };
 
-const Dashboard = (props)=>{
-  const { auth, loginUrl } = useContext(SteemContext);
-  return( 
+  if (!auth) throw "User not logged";
+  return (
     <React.Fragment>
-      {auth?<PrintPost />:<a href={loginUrl}>Log in</a>}
+      <h1>
+        This button create a post in your blog, be wise when you click on it{" "}
+      </h1>
+      <button onClick={makeANewPost}>Make a new post</button>
     </React.Fragment>
-    )
-}
+  );
+};
 
-export default Dashboard
+const Dashboard = props => {
+  const { auth, loginUrl } = useContext(SteemContext);
+  return (
+    <React.Fragment>
+      {auth ? <PrintPost /> : <a href={loginUrl}>Log in</a>}
+    </React.Fragment>
+  );
+};
+
+export default Dashboard;
+
 ```
 
 ### Contribute
