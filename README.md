@@ -228,7 +228,7 @@ A simplificated set of async steem functions.
 
 
 ```javascript
-import {SteemAsync} from 'react-steem-provider';
+import SteemAsync from 'react-steem-provider/SteemAsync';
 ```
 - List of posts in the platform.
 ```javascript
@@ -284,15 +284,16 @@ const followers =  SteemAsync.getFollowers(username, limit).then(
 
 Useful functions for your steem project.
 
-```javascript
-import {SteemHelpers} from 'react-steem-provider';
-```
+
 - Parse reputation
 ```javascript
-SteemHelpers.parserSteemRep("<<reputation>>")
+import {parserSteemRep, parserSteemSimpleRep} from 'react-steem-provider/Helpers';
+Helpers.parserSteemRep("<<reputation>>") 
+Helpers.parserSteemSimpleRep("<<reputation>>")
 ```
 - Parse Steem markdown  
 ```javascript
+import {parseSteemMarkdown} from 'react-steem-provider/Helpers';
 SteemHelpers.parseSteemMarkdown("<<post.body>>")
 ```
 
@@ -307,7 +308,8 @@ SteemHelpers.parseSteemMarkdown("<<post.body>>")
 
 ```javascript
 import React, {userEffect, useContext} from "react"
-import {SteemAsync, SteemContext} from 'react-steem-provider';
+import SteemAsync from 'react-steem-provider/SteemAsync';
+import {SteemContext} from 'react-steem-provider';
 
 const PrintPost = (props)=>{
 

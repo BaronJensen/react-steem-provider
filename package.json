@@ -1,6 +1,6 @@
 {
   "name": "react-steem-provider",
-  "version": "1.0.3",
+  "version": "1.0.6",
   "description": "A simple component to create apps in the steem blockchain using React",
   "main": "index.js",
   "scripts": {

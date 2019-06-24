@@ -10,4 +10,4 @@ function parserSteemRep(rep)
     return parseInt(sign * Math.pow(10, rep))
 }
 
-export {parseSteemMarkdown, parserSteemRep}
+export default {parseSteemMarkdown, parserSteemRep}

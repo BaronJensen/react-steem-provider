@@ -1,17 +1,11 @@
 import SteemProvider, {SteemContext,withSteem} from "./Provider/";
-import SteemAsync from "./steem/SteemAsync";
-import SteemHelpers from "./steem/Helpers";
-
 
 export default SteemProvider;
 
 export { 
-	
 	withSteem,
-	SteemAsync, 
 	SteemProvider, 
 	SteemContext, 
-	SteemHelpers 
 };
 
 
