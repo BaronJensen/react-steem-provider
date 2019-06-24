@@ -11,7 +11,7 @@ function parserSteemSimpleRep(rep)
 }
 
 
-parserSteemRep(reputation) {
+function parserSteemRep(reputation) {
       function log10(str) {
         const leadingDigits = parseInt(str.substring(0, 4));
         const log = Math.log(leadingDigits) / Math.LN10 + 0.00000001;
