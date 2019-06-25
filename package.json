@@ -17,9 +17,11 @@
     "steem",
     "blockchain"
   ],
+  "author":"Jensen Baronville <@baronjensen> (https://twitter.com/@baronjens)",
   "contributors": [
     "Jensen Baronville <@baronjensen> (https://twitter.com/@baronjens)",
-    "Arath Jimenez <@arathjz> (https://twitter.com/@arathjz)"
+    "Arath Jimenez <@arathjz> (https://twitter.com/@arathjz)",
+    "Jesus Batallar <@selfus3r01> (https://twitter.com/@selfus3r01)"
   ],
   "license": "MIT",
   "devDependencies": {

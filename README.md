@@ -134,7 +134,7 @@ const Dashboard = (props)=>{
 **List of actions from SteemContext**
 
 
-*Note: You MUST be logged to use this actions*
+*Note: You MUST be logged to use some of this actions*
 
 
 - Get logged user
@@ -178,11 +178,8 @@ reply_params = {
 ```javascript
 await steem.actions.remove(permlink)
 ```
-- Remove post
-```javascript
-await steem.actions.remove(permlink)
-```
-- Remove create regular post
+
+- Create regular post
 ```javascript
 await steem.actions.comment(parentAuthor, parentPermlink, author, permlink, title, body, jsonMetadata)
 ```
@@ -199,7 +196,7 @@ await steem.actions.follow(following)
 ```javascript
 await steem.actions.unfollow(unfollower, unfollowing)
 ```
-- claim Reward Balance
+- Claim Reward Balance
 ```javascript
 await steem.actions.claimRewardBalance(account, rewardSteem, rewardSbd, rewardVests)
 ```
@@ -211,13 +208,6 @@ await steem.actions.updateUserMetadata(metadata)
 ```javascript
 await steem.actions.revokeToken()
 ```
-
-
-
-
-
-
-
 
 
 --- 
@@ -238,7 +228,7 @@ import SteemAsync from 'react-steem-provider/SteemAsync';
     (err)=>console.error(err));
 ```
 
-- get full post 
+- Get full post 
 
 ```javascript
  SteemAsync.getPost(author, permlink).then(
@@ -270,7 +260,7 @@ const post = await SteemAsync.getDiscussionsByBlog(username, limit);
 ```javascript
   await SteemAsync.getFollowing(username, limit); 
 ```
-- Get Folloewrs
+- Get Followers
 
 ```javascript
 const followers =  SteemAsync.getFollowers(username, limit).then(
@@ -279,7 +269,7 @@ const followers =  SteemAsync.getFollowers(username, limit).then(
 
 ```
 
-
+ 
 **Helpers**
 
 Useful functions for your steem project.
