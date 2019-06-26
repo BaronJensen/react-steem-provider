@@ -41,7 +41,8 @@ $ yarn add react-steem-provider
 ***
 
 <a name="steemconnect"/>
-##2.Using SteemConnect Context.
+
+## 2.Using SteemConnect Context.
 
 This library implements a context provider to manage the login state and other steemConnect instances.
 
