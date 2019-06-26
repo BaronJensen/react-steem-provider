@@ -97,7 +97,7 @@ Once we have the SteemProvider in a parent component *(App.js)* we need to consu
 
 *(Option A)* - **Using steem context consumer with useContext (hooks)**
 
-*Note: Your React version must be >= 16.4 to use hooks*
+*Note: Your React version must be >= 16.8 to use hooks*
 
 
 **Dahsboard.js** 
