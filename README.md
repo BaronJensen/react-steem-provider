@@ -92,7 +92,7 @@ export default App;
 
 ### Step 2: Using the Steem Context Consumer.
 
-Once we have the SteemProvider in a parent component *(App.js)* we need to consume our **Context Provider** to  use the instances and functions from SteemConnect, in React there are many opcion to cosume context let's some of them.
+Once we have the SteemProvider in a parent component *(App.js)* we need to consume our **Context Provider** to  use the instances and functions from SteemConnect, in React there are many option to consume context, let's some of them.
 
 
 *(Option A)* - **Using steem context consumer with useContext (hooks)**
