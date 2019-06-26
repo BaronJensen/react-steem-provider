@@ -117,7 +117,7 @@ const Dashboard = (props)=>{
 
   return( 
     <React.Fragment>
-      {auth?:<h1>You are logged</h1>:<a href={loginUrl}>Log in</a>}
+      {auth?<h1>You are logged</h1>:<a href={loginUrl}>Log in</a>}
     </React.Fragment>
     )
 }
@@ -147,7 +147,7 @@ const Dashboard = withSteem(({steem})=>{
 
   return( 
     <React.Fragment>
-      {auth?:<h1 >You are logged</h1>:<a href={loginUrl}>Log in</a>}
+      {auth?<h1 >You are logged</h1>:<a href={loginUrl}>Log in</a>}
     </React.Fragment>
     )
 });
