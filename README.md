@@ -10,21 +10,28 @@ Start quickly a steem project with this flexible library that combines SteemConn
 ## Content
 
 [1. Installing.](#install)
+
 [2. Using SteemConnect Context.](#steemconnect)
-  [-Step 1: Setting up our provider.](#steemconnect-1)
-  [-Step 2: Using the context consumer.](#steemconnect-2)
-  [-What is in the steem instance?](#steemconnect-3)
+
+  [- Step 1: Setting up our provider.](#steemconnect-1)
+
+  [- Step 2: Using the context consumer.](#steemconnect-2)
+
+  [- What is in the steem instance?](#steemconnect-3)
 
 [3. Async Steem functions.](#steem)
+
 [4. Helpers.](#helper)
+
 [5. Example.](#expamle)
+
 
 
 ***
 
 <a name="install"/>
 
-##1.Installing
+## 1.Installing
 ```bash
 $ npm install react-steem-provider
 $ yarn add react-steem-provider
@@ -168,7 +175,7 @@ import {SteemContext} from 'react-steem-provider';
 
 <a name="steemconnect-3"/>
 
-###What is in the *steem* instance?
+### What is in the *steem* instance?
 
 
 **List of instances from SteemContext (steem)**
@@ -270,7 +277,7 @@ await steem.actions.revokeToken()
 ***
 <a name="steem"/>
 
-###3.Async Steem functions:
+## 3.Async Steem functions:
 
 
 A simplificated set of async steem functions.
@@ -333,7 +340,7 @@ const followers =  SteemAsync.getFollowers(username, limit).then(
 
 <a name="helper"/>
 
-###4.Helpers
+## 4.Helpers
 
 Useful functions for your steem project.
 
@@ -354,7 +361,7 @@ SteemHelpers.parseSteemMarkdown("<<post.body>>")
 
 <a name="expamle"/>
 
-###5.Example
+## 5.Example
 
 **Dahsboard.js**
 
