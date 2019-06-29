@@ -185,7 +185,7 @@ import {SteemContext} from 'react-steem-provider';
     {
         loginUrl,//SteemConnect loginUrl 
         auth, //steem user or null
-        steemConnect,//steemConnect original instance
+        steemConnect,//steemConnect original instance (client)
         logout, //logout function
         loading, //true when auth is loading
         actions //Set of writtig functions
@@ -222,6 +222,11 @@ post_params = {
 }
 ```
 
+**advanced (optional)**
+ ```javascript
+advanced = [{exetions:{}}...]
+```
+
  
 - Reply post
 ```javascript
@@ -236,6 +241,10 @@ reply_params = {
     body,  
     jsonmetadata = {}
 }
+```
+**advanced (optional)**
+ ```javascript
+advanced = [{exetions:{}}...]
 ```
 
 
@@ -281,9 +290,14 @@ await steem.actions.revokeToken()
 ## 3.Async Steem functions:
 
 
+
+
+
 A simplificated set of async steem functions.
 
 *Note: you dont need to use the SteemContext to implement this functions*
+
+
 
 ```javascript
 import SteemAsync from 'react-steem-provider/SteemAsync';
@@ -326,16 +340,26 @@ const post = await SteemAsync.getDiscussionsByBlog(username, limit);
 ```
 - Get following 
 ```javascript
-  await SteemAsync.getFollowing(username, limit); 
+  await SteemAsync.getFollowing(username, limit, startAtSting = "a"); 
 ```
+
+
 - Get Followers
 
 ```javascript
-const followers =  SteemAsync.getFollowers(username, limit).then(
+const followers =  SteemAsync.getFollowers(username, limit,  startAtSting = "a").then(
     (response)=>{ console.log(response) }).catch(
     (err)=>console.error(err));
 
 ```
+
+---
+
+### You can access to the steem.js package:
+```javascript
+import {steem} from 'react-steem-provider/SteemAsync';
+```
+
 
 ***
 
@@ -349,13 +373,13 @@ Useful functions for your steem project.
 - Parse reputation
 ```javascript
 import {parserSteemRep, parserSteemSimpleRep} from 'react-steem-provider/Helpers';
-Helpers.parserSteemRep("<<reputation>>") 
-Helpers.parserSteemSimpleRep("<<reputation>>")
+parserSteemRep("<<reputation>>") 
+parserSteemSimpleRep("<<reputation>>")
 ```
 - Parse Steem markdown  
 ```javascript
 import {parseSteemMarkdown} from 'react-steem-provider/Helpers';
-SteemHelpers.parseSteemMarkdown("<<post.body>>")
+parseSteemMarkdown("<<post.body>>")
 ```
 
 ***

@@ -1,4 +1,4 @@
-let steem = require('steem');
+export let steem = require('steem');
 const SteemAsync = {
 
 	readPostGeneral(tag, getBy, limit) {
@@ -77,9 +77,9 @@ const SteemAsync = {
 		});
 	},
 
-	getFollowing(username, limit) {
+	getFollowing(username, limit, follower = "a") {
 		return new Promise((resolve, reject) => {
-			steem.api.getFollowing(username, 'a', 'blog', limit, (err, result) => {
+			steem.api.getFollowing(username, follower, 'blog', limit, (err, result) => {
 				if(err)
 					reject(err)
 				else
@@ -88,9 +88,9 @@ const SteemAsync = {
 		})
 	},
 
-	getFollowers(username, limit) {
+	getFollowers(username, limit, following = "a") {
 		return new Promise((resolve, reject) => {
-			steem.api.getFollowers(username, 'a', 'blog', limit, (err, result) => {
+			steem.api.getFollowers(username, following, 'blog', limit, (err, result) => {
 				if(err)
 					reject(err)
 				else
@@ -119,7 +119,18 @@ const SteemAsync = {
 					resolve(result)
 			});
 		})
-	}
+	},
+	getPostReplies(author, permlink) {
+		return new Promise((resolve, reject) => {
+			steem.api.getContentReplies(author, permlink, function(err, result) {
+  			if(err)
+					reject(err)
+				else
+					resolve(result)
+			});
+		})
+	},
+
 };
 
 export default SteemAsync;
