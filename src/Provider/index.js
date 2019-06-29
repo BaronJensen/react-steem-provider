@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withRouter, Redirect, BrowserRouter} from 'react-router-dom';
-import sc2 from 'sc2-sdk';
+import steemconnect from 'steemconnect';
 import {setToken, getToken, removeToken} from '../storage/localToken';
 import actionsCreator from "./actionsCreator"
 
@@ -27,7 +27,7 @@ const SteemContext = React.createContext();
 			}
 
 
-			this.steemConnect  = sc2.Initialize(this.props.config)
+			this.steemConnect  = steemconnect.Initialize(this.props.config)
 			this.steemConnectUrl = this.steemConnect.getLoginURL();
 		}
 		//Clean all the state of the app
@@ -99,9 +99,32 @@ const SteemContext = React.createContext();
 			return false
 		}
 
+		plugginLogin()
+		{
+			var params = {};
+
+			// The "username" parameter is required prior to log in for "Steem Keychain" users.
+			if (steemconnect.useSteemKeychain) {
+				console.log(steemconnect.useSteemKeychain)
+
+			//params = { username: 'fabien' };
+			}
+/*
+			this.steemconnect.login(params, function(err, token) {
+			console.log(err, token)
+			});
+			*/
+
+		}
+
 		componentDidMount()
 		{
+
+			if(this.props.apha === "testv3")
+				this.plugginLogin()
+
 			this.login()
+
 
 		}
 
