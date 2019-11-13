@@ -224,7 +224,7 @@ post_params = {
 
 **advanced (optional)**
  ```javascript
-advanced = [{exetions:{}}...]
+advanced = [["comment_options", {...options }], ["vote", {...voteOptions }], ...otherOperations]
 ```
 
  
@@ -244,7 +244,7 @@ reply_params = {
 ```
 **advanced (optional)**
  ```javascript
-advanced = [{exetions:{}}...]
+advanced = [["comment_options", {...options }], ["vote", {...voteOptions }], ...otherOperations]
 ```
 
 
